@@ -1,8 +1,5 @@
 namespace SunamoHelpers._sunamo;
 
-/// <summary>
-/// Provides lists of key codes for letters and digits.
-/// </summary>
 internal class LetterAndDigitKeyCodeService
 {
     internal readonly List<int> LowerKeyCodes = new(new[]

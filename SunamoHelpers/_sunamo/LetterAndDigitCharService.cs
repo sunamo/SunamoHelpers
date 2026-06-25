@@ -1,8 +1,5 @@
 namespace SunamoHelpers._sunamo;
 
-/// <summary>
-/// Provides lists of letter and digit characters for classification.
-/// </summary>
 internal class LetterAndDigitCharService
 {
 #pragma warning disable CS0649

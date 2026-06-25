@@ -1,13 +1,7 @@
 namespace SunamoHelpers.Helpers.Runtime;
 
-/// <summary>
-/// Provides helper methods for detecting the current platform and runtime environment.
-/// </summary>
 public class PlatformInteropHelper
 {
-    /// <summary>
-    /// Checks whether the application is a selling app.
-    /// </summary>
     public static bool IsSellingApp()
     {
         return false;
@@ -15,9 +9,6 @@ public class PlatformInteropHelper
 
     private static bool? isUwp = null;
 
-    /// <summary>
-    /// Determines whether the application is running as a UWP Windows Store app.
-    /// </summary>
     public static bool IsUwpWindowsStoreApp()
     {
         if (isUwp.HasValue)
@@ -68,17 +59,11 @@ public class PlatformInteropHelper
         return isUwp.Value;
     }
 
-    /// <summary>
-    /// Gets the type of the resources class. Currently not implemented.
-    /// </summary>
     public static Type GetTypeOfResources()
     {
         throw new Exception();
     }
 
-    /// <summary>
-    /// Determines whether the application uses a .NET Standard/Core project.
-    /// </summary>
     public static bool IsUseStandardProject()
     {
         var result = RuntimeInformation.FrameworkDescription;

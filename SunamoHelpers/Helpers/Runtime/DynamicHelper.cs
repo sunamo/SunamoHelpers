@@ -1,14 +1,7 @@
 namespace SunamoHelpers.Helpers.Runtime;
 
-/// <summary>
-/// Provides helper methods for working with dynamic objects at runtime.
-/// </summary>
 public class DynamicHelper
 {
-    /// <summary>
-    /// Attempts to convert a dynamic object into a flat list of dynamic elements.
-    /// </summary>
-    /// <param name="dynamicObject">The dynamic object to convert.</param>
     public static List<dynamic> ListFromDynamicObject(dynamic dynamicObject)
     {
         ThrowEx.NotImplementedMethod();

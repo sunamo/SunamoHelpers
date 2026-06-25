@@ -1,8 +1,5 @@
 namespace SunamoHelpers._sunamo.SunamoValues.Constants;
 
-/// <summary>
-/// Runtime framework name constants.
-/// </summary>
 internal class RuntimeFrameworks
 {
     internal const string NetCore = ".NET Core";

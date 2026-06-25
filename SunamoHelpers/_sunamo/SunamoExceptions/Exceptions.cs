@@ -6,29 +6,28 @@ internal sealed partial class Exceptions
     #region Other
     internal static string CheckBefore(string before)
     {
-        return string.IsNullOrWhiteSpace(before) ? string.Empty : before + ": ";
+        return string.IsNullOrWhiteSpace(before) ? string.Empty : $"{before}: ";
     }
 
     internal static string TextOfExceptions(Exception ex, bool alsoInner = true)
     {
-        if (ex == null) return string.Empty;
-        StringBuilder stringBuilder = new();
+        if (ex is null) return string.Empty;
+        var stringBuilder = new StringBuilder();
         stringBuilder.Append("Exception:");
         stringBuilder.AppendLine(ex.Message);
         if (alsoInner)
-            while (ex.InnerException != null)
+            while (ex.InnerException is not null)
             {
                 ex = ex.InnerException;
                 stringBuilder.AppendLine(ex.Message);
             }
-        var result = stringBuilder.ToString();
-        return result;
+        return stringBuilder.ToString();
     }
 
     internal static Tuple<string, string, string> PlaceOfException(
 bool isFillAlsoFirstTwo = true)
     {
-        StackTrace stackTrace = new();
+        var stackTrace = new StackTrace();
         var stackTraceText = stackTrace.ToString();
         var lines = stackTraceText.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
         lines.RemoveAt(0);
@@ -63,14 +62,13 @@ bool isFillAlsoFirstTwo = true)
     }
     internal static string CallingMethod(int value = 1)
     {
-        StackTrace stackTrace = new();
+        var stackTrace = new StackTrace();
         var methodBase = stackTrace.GetFrame(value)?.GetMethod();
-        if (methodBase == null)
+        if (methodBase is null)
         {
             return "Method name cannot be get";
         }
-        var methodName = methodBase.Name;
-        return methodName;
+        return methodBase.Name;
     }
     #endregion
 
@@ -79,27 +77,27 @@ bool isFillAlsoFirstTwo = true)
     internal readonly static StringBuilder AdditionalInfoStringBuilder = new();
     #endregion
 
-    #region OnlyReturnString 
+    #region OnlyReturnString
 
     internal static string? IsNotAllowed(string before, string what)
     {
-        return CheckBefore(before) + what + " is not allowed.";
+        return $"{CheckBefore(before)}{what} is not allowed.";
     }
     internal static string? NotSupported(string before)
     {
-        return CheckBefore(before) + "Not supported";
+        return $"{CheckBefore(before)}Not supported";
     }
     internal static string? DoesntHaveRequiredType(string before, string variableName)
     {
-        return CheckBefore(before) + variableName + "does not have required type" + ".";
+        return $"{CheckBefore(before)}{variableName}does not have required type.";
     }
     internal static string? Custom(string before, string message)
     {
-        return CheckBefore(before) + message;
+        return $"{CheckBefore(before)}{message}";
     }
     internal static string? NotImplementedMethod(string before)
     {
-        return CheckBefore(before) + "Not implemented method.";
+        return $"{CheckBefore(before)}Not implemented method.";
     }
     #endregion
 
@@ -107,16 +105,16 @@ bool isFillAlsoFirstTwo = true)
     IEnumerable<T> collection)
     {
         var count = collection.Count();
-        return count != requireElements ? CheckBefore(before) + $" {nameCollection} has {count}, it's required {requireElements}" : null;
+        return count != requireElements ? $"{CheckBefore(before)} {nameCollection} has {count}, it's required {requireElements}" : null;
     }
     internal static string? IsNull(string before, string variableName, object? variable)
     {
-        return variable == null ? CheckBefore(before) + variableName + " " + "is null" + "." : null;
+        return variable is null ? $"{CheckBefore(before)}{variableName} is null." : null;
     }
     internal static string? NotImplementedCase(string before, object notImplementedName)
     {
         var forText = string.Empty;
-        if (notImplementedName != null)
+        if (notImplementedName is not null)
         {
             forText = " for ";
             if (notImplementedName.GetType() == typeof(Type))
@@ -124,8 +122,7 @@ bool isFillAlsoFirstTwo = true)
             else
                 forText += notImplementedName.ToString();
         }
-        return CheckBefore(before) + "Not implemented case" + forText + " . internal program error. Please contact developer" +
-        ".";
+        return $"{CheckBefore(before)}Not implemented case{forText} . internal program error. Please contact developer.";
     }
     internal static string? NotContains(string before, string originalText, params string[] shouldContains)
     {
@@ -135,15 +132,13 @@ bool isFillAlsoFirstTwo = true)
                 notContained.Add(item);
         return notContained.Count == 0
         ? null
-        : CheckBefore(before) + "Original text dont contains: " + string.Join(",", notContained) + ". Original text: " + originalText;
+        : $"{CheckBefore(before)}Original text dont contains: {string.Join(",", notContained)}. Original text: {originalText}";
     }
 
     internal static string? DifferentCountInLists(string before, string firstCollectionName, int firstCollectionCount, string secondCollectionName, int secondCollectionCount)
     {
         if (firstCollectionCount != secondCollectionCount)
-            return CheckBefore(before) + " different count elements in collection" + " " +
-            string.Concat(firstCollectionName + "-" + firstCollectionCount) + " vs. " +
-            string.Concat(secondCollectionName + "-" + secondCollectionCount);
+            return $"{CheckBefore(before)} different count elements in collection {firstCollectionName}-{firstCollectionCount} vs. {secondCollectionName}-{secondCollectionCount}";
         return null;
     }
 }

@@ -1,8 +1,5 @@
 namespace SunamoHelpers._sunamo.SunamoThisApp;
 
-/// <summary>
-/// Provides shared application-level settings and status management.
-/// </summary>
 internal class ThisApp
 {
     internal static string EventLogName { get; set; } = null!;
@@ -17,7 +14,7 @@ internal class ThisApp
         var format = /*string.Format*/ string.Format(status, args);
         if (format.Trim() != string.Empty)
         {
-            if (StatusSetted == null)
+            if (StatusSetted is null)
             {
                 // For unit tests
                 //////////DebugLogger.Instance.WriteLine(st + ": " + format);

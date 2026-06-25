@@ -1,13 +1,7 @@
 namespace SunamoHelpers.Helpers;
 
-/// <summary>
-/// Provides helper methods for locale and culture operations.
-/// </summary>
 public class LocaleHelper
 {
-    /// <summary>
-    /// Initializes the locale helper by iterating available cultures.
-    /// </summary>
     public static void Init()
     {
         foreach (var item in CultureInfo.GetCultures(CultureTypes.AllCultures))
@@ -15,11 +9,7 @@ public class LocaleHelper
         }
     }
 
-    /// <summary>
-    /// Gets the country code for a given language code.
-    /// Note: not reliable because for "en" it returns "AG". Use GetCountryForLang2 instead.
-    /// </summary>
-    /// <param name="lang">Two-letter language code.</param>
+    // Note: not reliable because for "en" it returns "AG". Use GetCountryForLang2 instead.
     public static string GetCountryForLang(string lang)
     {
         lang = lang.ToLower();

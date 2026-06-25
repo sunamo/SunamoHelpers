@@ -1,14 +1,7 @@
 namespace SunamoHelpers.Helpers.Text;
 
-/// <summary>
-/// Provides little-endian byte conversion methods for unsigned integer types.
-/// </summary>
 public static class BitConverterLE
 {
-    /// <summary>
-    /// Converts a ulong value to a little-endian byte array.
-    /// </summary>
-    /// <param name="value">The value to convert.</param>
     public static byte[] GetBytes(ulong value)
     {
         var buffer = new byte[8];
@@ -23,10 +16,6 @@ public static class BitConverterLE
         return buffer;
     }
 
-    /// <summary>
-    /// Converts a uint value to a little-endian byte array.
-    /// </summary>
-    /// <param name="value">The value to convert.</param>
     public static byte[] GetBytes(uint value)
     {
         var buffer = new byte[4];
@@ -37,10 +26,6 @@ public static class BitConverterLE
         return buffer;
     }
 
-    /// <summary>
-    /// Converts a ushort value to a little-endian byte array.
-    /// </summary>
-    /// <param name="value">The value to convert.</param>
     public static byte[] GetBytes(ushort value)
     {
         var buffer = new byte[2];

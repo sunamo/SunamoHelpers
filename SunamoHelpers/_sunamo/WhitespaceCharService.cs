@@ -1,8 +1,5 @@
 namespace SunamoHelpers._sunamo;
 
-/// <summary>
-/// Provides lists of whitespace characters and their codes.
-/// </summary>
 internal class WhitespaceCharService
 {
 #pragma warning disable CS0649
