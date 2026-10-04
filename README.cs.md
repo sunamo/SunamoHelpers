@@ -6,4 +6,4 @@ schema_version: 1
 
 ## Short description
 
-Sbírka pomocných tříd pro běžné úlohy: přetypování (CastHelper), Base64 a bitové operace, šifrování a datové entity jako ComplexInfoString. Slouží jako sdílená základna pro další balíčky Sunamo. Obsahuje Runner a testy.
+NuGet balíček s pomocnými třídami, hlavně konverzemi textu (Base64, camelCase, PascalCase, lowercase). Obsahuje testy konverzí a Runner. Je součástí sbírky PlatformIndependentNuGetPackages.
