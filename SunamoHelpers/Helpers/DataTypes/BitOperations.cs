@@ -17,16 +17,16 @@ public static class BitOperations
 
         else
         {
-            int i;
+            int index;
 
-            for (i = 0; i < endByte - startByte; i++)
+            for (index = 0; index < endByte - startByte; index++)
             {
-                destination[i] = (byte)(bytes[startByte + i] << shiftA | bytes[startByte + i + 1] >> shiftB);
+                destination[index] = (byte)(bytes[startByte + index] << shiftA | bytes[startByte + index + 1] >> shiftB);
             }
 
-            if (i < destination.Length)
+            if (index < destination.Length)
             {
-                destination[i] = (byte)(bytes[startByte + i] << shiftA);
+                destination[index] = (byte)(bytes[startByte + index] << shiftA);
             }
         }
 
@@ -54,9 +54,9 @@ public static class BitOperations
         int skipBits = offset % 8;
         ulong bits = 0;
 
-        for (int i = 0; i <= Math.Min(endByte - startByte, 7); i++)
+        for (int index = 0; index <= Math.Min(endByte - startByte, 7); index++)
         {
-            bits |= (ulong)bytes[startByte + i] << 56 - i * 8;
+            bits |= (ulong)bytes[startByte + index] << 56 - index * 8;
         }
 
         if (skipBits != 0)

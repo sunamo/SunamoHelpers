@@ -9,17 +9,17 @@ internal sealed partial class Exceptions
         return string.IsNullOrWhiteSpace(before) ? string.Empty : $"{before}: ";
     }
 
-    internal static string TextOfExceptions(Exception ex, bool alsoInner = true)
+    internal static string TextOfExceptions(Exception exception, bool alsoInner = true)
     {
-        if (ex is null) return string.Empty;
+        if (exception is null) return string.Empty;
         var stringBuilder = new StringBuilder();
         stringBuilder.Append("Exception:");
-        stringBuilder.AppendLine(ex.Message);
+        stringBuilder.AppendLine(exception.Message);
         if (alsoInner)
-            while (ex.InnerException is not null)
+            while (exception.InnerException is not null)
             {
-                ex = ex.InnerException;
-                stringBuilder.AppendLine(ex.Message);
+                exception = exception.InnerException;
+                stringBuilder.AppendLine(exception.Message);
             }
         return stringBuilder.ToString();
     }
@@ -33,9 +33,9 @@ bool isFillAlsoFirstTwo = true)
         lines.RemoveAt(0);
         string type = string.Empty;
         string methodName = string.Empty;
-        for (int i = 0; i < lines.Count; i++)
+        for (int index = 0; index < lines.Count; index++)
         {
-            var line = lines[i];
+            var line = lines[index];
             if (isFillAlsoFirstTwo)
                 if (!line.StartsWith("   at ThrowEx"))
                 {

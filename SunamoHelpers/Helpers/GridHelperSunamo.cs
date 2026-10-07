@@ -6,7 +6,7 @@ public class GridHelperSunamo
     {
         var result = new List<string>(count);
         var proportion = 100d / count;
-        for (int i = 0; i < count; i++)
+        for (int index = 0; index < count; index++)
         {
             result.Add(proportion + "*");
         }

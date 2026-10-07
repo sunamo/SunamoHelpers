@@ -23,17 +23,17 @@ public class GuidHelper
     public static string GuidsOnlySingleLetter()
     {
         List<string> list = new List<string>();
-        for (int i = 0; i < 10; i++)
+        for (int index = 0; index < 10; index++)
         {
-            var text = i.ToString();
+            var text = index.ToString();
             text = text.PadLeft(32, text[0]);
 
             list.Add(AddDashes(text));
         }
 
-        for (char i = 'a'; i < 'g'; i++)
+        for (char letter = 'a'; letter < 'g'; letter++)
         {
-            var text = i.ToString();
+            var text = letter.ToString();
             text = text.PadLeft(32, text[0]);
 
             list.Add(AddDashes(text));

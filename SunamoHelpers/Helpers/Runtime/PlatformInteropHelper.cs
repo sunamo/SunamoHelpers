@@ -24,10 +24,10 @@ public class PlatformInteropHelper
             {
                 types = item.GetTypes();
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                Console.WriteLine(ex.GetType().Name + ": " + ex.Message);
-                ThrowEx.Custom(ex);
+                Console.WriteLine(exception.GetType().Name + ": " + exception.Message);
+                ThrowEx.Custom(exception);
             }
 
             if (types != null)
