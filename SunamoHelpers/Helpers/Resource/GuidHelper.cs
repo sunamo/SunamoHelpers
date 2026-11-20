@@ -1,12 +1,25 @@
 namespace SunamoHelpers.Helpers.Resource;
 
+/// <summary>
+/// Represents the guid helper type.
+/// </summary>
 public class GuidHelper
 {
+    /// <summary>
+    /// Remove dashes.
+    /// </summary>
+    /// <param name="guid">The guid.</param>
+    /// <returns>The remove dashes result.</returns>
     public static string RemoveDashes(string guid)
     {
         return guid.Replace("-", "");
     }
 
+    /// <summary>
+    /// Add dashes.
+    /// </summary>
+    /// <param name="guid">The guid.</param>
+    /// <returns>The add dashes result.</returns>
     public static string AddDashes(string guid)
     {
         if (guid.Contains("-"))
@@ -20,6 +33,10 @@ public class GuidHelper
         return guid;
     }
 
+    /// <summary>
+    /// Guids only single letter.
+    /// </summary>
+    /// <returns>The guids only single letter result.</returns>
     public static string GuidsOnlySingleLetter()
     {
         List<string> list = new List<string>();
