@@ -14,7 +14,6 @@ global using SunamoHelpers._sunamo.SunamoFileExtensions;
 global using SunamoHelpers._sunamo.SunamoFileSystem;
 global using SunamoHelpers._sunamo.SunamoInterfaces.Interfaces;
 global using SunamoHelpers._sunamo.SunamoInterfaces.Interfaces.SunamoPS;
-global using SunamoHelpers._sunamo.SunamoLang.SunamoI18N;
 global using SunamoHelpers._sunamo.SunamoRandom;
 global using SunamoHelpers._sunamo.SunamoString;
 global using SunamoHelpers._sunamo.SunamoStringData;
