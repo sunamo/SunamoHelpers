@@ -1,4 +1,3 @@
-// variables names: ok
 namespace RunnerSunamoHelpers;
 
 internal class Program

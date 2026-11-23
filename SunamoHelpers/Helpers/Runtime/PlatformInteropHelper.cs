@@ -1,7 +1,14 @@
 namespace SunamoHelpers.Helpers.Runtime;
 
+/// <summary>
+/// Represents the platform interop helper type.
+/// </summary>
 public class PlatformInteropHelper
 {
+    /// <summary>
+    /// Is selling app.
+    /// </summary>
+    /// <returns>The is selling app result.</returns>
     public static bool IsSellingApp()
     {
         return false;
@@ -9,6 +16,10 @@ public class PlatformInteropHelper
 
     private static bool? isUwp = null;
 
+    /// <summary>
+    /// Is uwp windows store app.
+    /// </summary>
+    /// <returns>The is uwp windows store app result.</returns>
     public static bool IsUwpWindowsStoreApp()
     {
         if (isUwp.HasValue)
@@ -59,11 +70,19 @@ public class PlatformInteropHelper
         return isUwp.Value;
     }
 
+    /// <summary>
+    /// Get type of resources.
+    /// </summary>
+    /// <returns>The get type of resources result.</returns>
     public static Type GetTypeOfResources()
     {
         throw new Exception();
     }
 
+    /// <summary>
+    /// Is use standard project.
+    /// </summary>
+    /// <returns>The is use standard project result.</returns>
     public static bool IsUseStandardProject()
     {
         var result = RuntimeInformation.FrameworkDescription;

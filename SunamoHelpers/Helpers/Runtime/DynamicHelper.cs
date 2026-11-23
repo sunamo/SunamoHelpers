@@ -1,7 +1,15 @@
 namespace SunamoHelpers.Helpers.Runtime;
 
+/// <summary>
+/// Represents the dynamic helper type.
+/// </summary>
 public class DynamicHelper
 {
+    /// <summary>
+    /// List from dynamic object.
+    /// </summary>
+    /// <param name="dynamicObject">The dynamic object.</param>
+    /// <returns>The list from dynamic object result.</returns>
     public static List<dynamic> ListFromDynamicObject(dynamic dynamicObject)
     {
         ThrowEx.NotImplementedMethod();

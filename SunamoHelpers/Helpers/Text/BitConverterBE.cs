@@ -1,7 +1,15 @@
 namespace SunamoHelpers.Helpers.Text;
 
+/// <summary>
+/// Represents the bit converter BE type.
+/// </summary>
 public static class BitConverterBE
 {
+    /// <summary>
+    /// Get bytes.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The get bytes result.</returns>
     public static byte[] GetBytes(ulong value)
     {
         var buffer = new byte[8];
@@ -16,6 +24,11 @@ public static class BitConverterBE
         return buffer;
     }
 
+    /// <summary>
+    /// Get bytes.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The get bytes result.</returns>
     public static byte[] GetBytes(uint value)
     {
         var buffer = new byte[4];
@@ -26,6 +39,11 @@ public static class BitConverterBE
         return buffer;
     }
 
+    /// <summary>
+    /// Get bytes.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The get bytes result.</returns>
     public static byte[] GetBytes(ushort value)
     {
         var buffer = new byte[2];
@@ -34,6 +52,12 @@ public static class BitConverterBE
         return buffer;
     }
 
+    /// <summary>
+    /// To u int 16.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <param name="startIndex">The start index.</param>
+    /// <returns>The to u int 16 result.</returns>
     public static ushort ToUInt16(byte[] value, int startIndex)
     {
         return (ushort)(
@@ -41,6 +65,12 @@ public static class BitConverterBE
             value[startIndex + 1]);
     }
 
+    /// <summary>
+    /// To u int 32.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <param name="startIndex">The start index.</param>
+    /// <returns>The to u int 32 result.</returns>
     public static uint ToUInt32(byte[] value, int startIndex)
     {
         return
@@ -50,6 +80,12 @@ public static class BitConverterBE
             value[startIndex + 3];
     }
 
+    /// <summary>
+    /// To u int 64.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <param name="startIndex">The start index.</param>
+    /// <returns>The to u int 64 result.</returns>
     public static ulong ToUInt64(byte[] value, int startIndex)
     {
         return

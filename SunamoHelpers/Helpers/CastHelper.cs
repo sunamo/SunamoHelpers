@@ -1,7 +1,15 @@
 namespace SunamoHelpers.Helpers;
 
+/// <summary>
+/// Represents the cast helper type.
+/// </summary>
 public class CastHelper
 {
+    /// <summary>
+    /// To string.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The to string result.</returns>
     public static string ToString(object value)
     {
         var objectType = value.GetType();

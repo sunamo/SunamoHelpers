@@ -1,7 +1,15 @@
 namespace SunamoHelpers.Helpers.Text;
 
+/// <summary>
+/// Represents the bit converter LE type.
+/// </summary>
 public static class BitConverterLE
 {
+    /// <summary>
+    /// Get bytes.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The get bytes result.</returns>
     public static byte[] GetBytes(ulong value)
     {
         var buffer = new byte[8];
@@ -16,6 +24,11 @@ public static class BitConverterLE
         return buffer;
     }
 
+    /// <summary>
+    /// Get bytes.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The get bytes result.</returns>
     public static byte[] GetBytes(uint value)
     {
         var buffer = new byte[4];
@@ -26,6 +39,11 @@ public static class BitConverterLE
         return buffer;
     }
 
+    /// <summary>
+    /// Get bytes.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The get bytes result.</returns>
     public static byte[] GetBytes(ushort value)
     {
         var buffer = new byte[2];
